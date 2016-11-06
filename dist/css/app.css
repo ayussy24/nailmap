@@ -1,0 +1,573 @@
+/*! sanitize.css v3.0.0 | CC0 1.0 Public Domain | github.com/10up/sanitize.css */
+/*
+ * Normalization
+ */
+audio:not([controls]) {
+  display: none;
+  /* Chrome 44-, iOS 8+, Safari 9+ */
+}
+button {
+  overflow: visible;
+  /* Internet Explorer 11- */
+  -webkit-appearance: button;
+  /* iOS 8+ */
+}
+details {
+  display: block;
+  /* Edge 12+, Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+ */
+}
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  /* Edge 12+, Internet Explorer 11- */
+  overflow-y: scroll;
+  /* All browsers without overlaying scrollbars */
+  -webkit-text-size-adjust: 100%;
+  /* iOS 8+ */
+}
+input {
+  -webkit-border-radius: 0;
+  /* iOS 8+ */
+}
+@nest &[type="button"], &[type="reset"], &[type="submit"] {
+  -webkit-appearance: button;
+  /* iOS 8+ */
+}
+@nest &[type="number"] {
+  width: auto;
+  /* Firefox 36+ */
+}
+@nest &[type="search"] {
+  -webkit-appearance: textfield;
+  /* Chrome 45+, Safari 9+ */
+  @nest &::-webkit-search-cancel-button, &::-webkit-search-decoration {
+    -webkit-appearance: none;
+    /* Chrome 45+, Safari 9+ */
+  }
+}
+main {
+  display: block;
+  /* Android 4.3-, Internet Explorer 11-, Windows Phone 8.1+ */
+}
+pre {
+  overflow: auto;
+  /* Internet Explorer 11- */
+}
+progress {
+  display: inline-block;
+  /* Internet Explorer 11-, Windows Phone 8.1+ */
+}
+small {
+  font-size: var(--small-font-size, 75%);
+  /* All browsers */
+}
+summary {
+  display: block;
+  /* Firefox 40+, Internet Explorer 11-, Windows Phone 8.1+ */
+}
+svg:not(:root) {
+  overflow: hidden;
+  /* Internet Explorer 11- */
+}
+template {
+  display: none;
+  /* Android 4.3-, Internet Explorer 11-, iOS 7-, Safari 7-, Windows Phone 8.1+ */
+}
+textarea {
+  overflow: auto;
+  /* Edge 12+, Internet Explorer 11- */
+}
+[hidden] {
+  display: none;
+  /* Internet Explorer 10- */
+}
+/*
+ * Universal inheritance
+ */
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+* {
+  font-size: inherit;
+  line-height: inherit;
+}
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+/*
+ * Opinionated defaults
+ */
+/* specify the border style and width of all elements */
+*,
+::before,
+::after {
+  border-style: solid;
+  border-width: 0;
+}
+/* specify the core styles of all elements */
+* {
+  background-repeat: var(--background-repeat, no-repeat);
+  margin: 0;
+  padding: 0;
+}
+/* specify the root styles of the document */
+:root {
+  background-color: var(--html-background-color, #ffffff);
+  box-sizing: var(--html-box-sizing, border-box);
+  color: var(--html-color, #000000);
+  cursor: var(--html-cursor, default);
+  font: var(--html-font-size, 100%)/var(--html-line-height, 1.5) var(--font-family, sans-serif);
+  text-rendering: var(--html-text-rendering, optimizeLegibility);
+}
+/* specify the text decoration of anchors */
+a {
+  text-decoration: var(--anchor-text-decoration, none);
+}
+/* specify the alignment of media elements */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: var(--media-element-vertical-align, middle);
+}
+/* specify the background color of form elements */
+button,
+input,
+select,
+textarea {
+  background-color: var(--form-element-background-color, transparent);
+}
+/* specify the inherited color and font of form elements */
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+/* specify the minimum height of form elements */
+button,
+[type="button"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="reset"],
+[type="search"],
+[type="submit"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+select,
+textarea {
+  min-height: var(--form-element-min-height, 1.5em);
+}
+/* specify the font family of code elements */
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--monospace-font-family, monospace), monospace;
+}
+/* specify the list style of nav lists */
+nav ol,
+nav ul {
+  list-style: var(--nav-list-style, none);
+}
+/* specify the standard appearance of selects */
+select {
+  -moz-appearance: none;
+  /* Firefox 40+ */
+  -webkit-appearance: none;
+  /* Chrome 45+ */
+}
+@nest &::-ms-expand {
+  display: none;
+  /* Edge 12+, Internet Explorer 11- */
+}
+@nest &::-ms-value {
+  color: currentColor;
+  /* Edge 12+, Internet Explorer 11- */
+}
+/* specify the border styling of tables */
+table {
+  border-collapse: var(--table-border-collapse, collapse);
+  border-spacing: var(--table-border-spacing, 0);
+}
+/* specify the resizability of textareas */
+textarea {
+  resize: var(--textarea-resize, vertical);
+}
+/* specify the background color, font color, and drop shadow of text selections */
+::selection {
+  background-color: var(--selection-background-color, #b3d4fc);
+  /* required when declaring ::selection */
+  color: var(--selection-background-color, #4c2b03);
+  text-shadow: var(--selection-text-shadow, none);
+}
+/* specify the progress cursor of updating elements */
+[aria-busy="true"] {
+  cursor: progress;
+}
+/* specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+/* specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled] {
+  cursor: default;
+}
+/* specify the style of visually hidden yet accessible elements */
+[hidden][aria-hidden="false"] {
+  clip: rect(0 0 0 0);
+  display: inherit;
+  position: absolute;
+}
+@nest &:focus {
+  clip: auto;
+}
+.nailmapLpContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+.nailmapLpContainer a {
+  display: inline-block;
+}
+.nailmapLpContainer a:hover {
+  opacity: 0.7;
+}
+.nailmapLpContainer__header {
+  background-image: url(../../dist/images/header_back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFF;
+  text-align: center;
+}
+.nailmapLpContainer__header h1 {
+  padding: 42px 0 16px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header h1 {
+    padding: 24px 16px 8px;
+  }
+}
+.nailmapLpContainer__header h1 p {
+  font-size: 14px;
+  width: 75%;
+  margin: 0 auto;
+}
+.nailmapLpContainer__header h4 {
+  text-align: left;
+  padding: 16px 32px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header h4 {
+    padding: 16px;
+  }
+}
+.nailmapLpContainer__header__mainImage {
+  width: 60%;
+  padding: 24px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header__mainImage {
+    width: 100%;
+    padding: 8px;
+    margin-top: 24px;
+  }
+}
+.nailmapLpContainer__header__pr {
+  font-size: 14px;
+}
+.nailmapLpContainer__header__icon {
+  width: 50%;
+  margin: 16px auto;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header__icon {
+    width: 70%;
+  }
+}
+.nailmapLpContainer__header__sns {
+  padding: 24px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header__sns {
+    padding: 8px;
+  }
+}
+.nailmapLpContainer__header__sns a {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+.nailmapLpContainer__header__sns .fb_iframe_widget {
+  margin: 0 8px;
+}
+.nailmapLpContainer__header__sns .fb_iframe_widget_fluid {
+  display: inline-block;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header__sns .fb_iframe_widget_fluid {
+    display: block;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header__sns iframe#twitter-widget-0,
+  .nailmapLpContainer__header__sns .fb_iframe_widget_fluid,
+  .nailmapLpContainer__header__sns__app {
+    margin-bottom: 16px;
+  }
+}
+.nailmapLpContainer__header__sns__app {
+  display: inline-block;
+  overflow: hidden;
+  background: url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;
+  width: 135px;
+  height: 40px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__header__sns__app {
+    background-image: url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.svg);
+  }
+}
+.nailmapLpContainer__header__sns__appstore img {
+  width: 120px;
+}
+.nailmapLpContainer__pr {
+  padding: 42px;
+  text-align: center;
+  font-size: 20px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__pr {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+.nailmapLpContainer__pr span {
+  color: #8f31b2;
+}
+.nailmapLpContainer__detailPr {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 14px;
+  border-top: 1px solid #d42972;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__detailPr {
+    font-size: 12px;
+    padding: 24px;
+    line-height: 24px;
+    margin: auto;
+  }
+}
+.nailmapLpContainer__detailPr h3 {
+  margin-top: 24px;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__detailPr h3 {
+    margin-top: 8px;
+  }
+}
+.nailmapLpContainer__flow__step1__pcImage,
+.nailmapLpContainer__flow__step2__pcImage,
+.nailmapLpContainer__flow__step3__pcImage {
+  display: block;
+  width: 100%;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__flow__step1__pcImage,
+  .nailmapLpContainer__flow__step2__pcImage,
+  .nailmapLpContainer__flow__step3__pcImage {
+    display: none;
+    width: 100%;
+  }
+}
+.nailmapLpContainer__flow__step1__spImage,
+.nailmapLpContainer__flow__step2__spImage,
+.nailmapLpContainer__flow__step3__spImage {
+  display: none;
+  width: 100%;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__flow__step1__spImage,
+  .nailmapLpContainer__flow__step2__spImage,
+  .nailmapLpContainer__flow__step3__spImage {
+    display: block;
+  }
+}
+.nailmapLpContainer__campaign {
+  padding: 42px;
+  text-align: center;
+}
+.nailmapLpContainer__campaign__title {
+  width: 70%;
+  margin: 32px auto;
+}
+.nailmapLpContainer__campaign__title__pc {
+  display: block;
+  width: 70%;
+  margin: 32px auto 48px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__campaign__title__pc {
+    display: none;
+  }
+}
+.nailmapLpContainer__campaign__title__sp {
+  display: none;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__campaign__title__sp {
+    margin: 0px auto;
+    width: 100%;
+    display: block;
+  }
+}
+.nailmapLpContainer__campaign__text {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__campaign__text {
+    width: 100%;
+  }
+}
+.nailmapLpContainer__campaign__text__pcImage,
+.nailmapLpContainer__campaign__text__spImage {
+  margin: 24px auto;
+}
+.nailmapLpContainer__campaign__text__pcImage {
+  display: block;
+  width: 100%;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__campaign__text__pcImage {
+    display: none;
+  }
+}
+.nailmapLpContainer__campaign__text__spImage {
+  display: none;
+  margin: 42px auto 24px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__campaign__text__spImage {
+    width: 100%;
+    display: block;
+  }
+}
+.nailmapLpContainer__campaign__pr {
+  margin: 64px auto 16px;
+  font-size: 14px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__campaign__pr {
+    margin: 24px auto 16px;
+    font-size: 12px;
+    text-align: left;
+  }
+}
+.nailmapLpContainer__campaign ul {
+  font-size: 14px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__campaign ul {
+    font-size: 12px;
+  }
+}
+.nailmapLpContainer__campaign__toAppleStore {
+  background: #d42972;
+  padding: 16px 32px;
+  border-radius: 10px;
+  margin: 24px auto;
+  color: #FFF;
+}
+.nailmapLpContainer__campaign__alerttext {
+  font-size: 12px;
+}
+.nailmapLpContainer__footer {
+  position: relative;
+  background-image: url(../../dist/images/footer_back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #FFF;
+  text-align: left;
+  padding: 72px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__footer {
+    text-align: center;
+    padding: 56px 56px 0;
+  }
+}
+.nailmapLpContainer__footer__text {
+  padding: 32px;
+  width: 50%;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__footer__text {
+    padding: 0;
+    width: 100%;
+  }
+}
+.nailmapLpContainer__footer__spImage {
+  position: absolute;
+  width: 20%;
+  top: 5%;
+  right: 15%;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__footer__spImage {
+    position: relative;
+    top: inherit;
+    right: inherit;
+    width: 80%;
+    margin: 32px auto;
+  }
+}
+.nailmapLpContainer .copyright {
+  text-align: center;
+  background: #464646;
+  color: #FFF;
+  font-size: 12px;
+  padding: 16px;
+}
+.nailmapLpContainer__sns {
+  text-align: center;
+  margin: 56px auto;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__sns {
+    margin: 24px auto;
+  }
+}
+.nailmapLpContainer__sns a {
+  padding: 0 8px;
+}
+.nailmapLpContainer__sns a img {
+  width: 30px;
+}
+@media only screen and (max-width: 720px) {
+  .nailmapLpContainer__sns a img {
+    width: 60px;
+  }
+}
